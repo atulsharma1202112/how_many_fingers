@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>How Many Fingers!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            background: whitesmoke;
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        .button5 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+        }
+        
+        .button5:hover {
+            background-color: #555555;
+            color: white;
+        }
+        
+        input[type=text] {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 10px;
+            box-sizing: border-box;
+            border: none;
+            background-color: #3CBC8D;
+            color: white;
+        }
+        
+        div {
+            align-items: center;
+            padding-left: 70vh;
+            padding-top: 30vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            <h3>How many fingers am I holding up?</h3>
+        </p>
+
+        <p>
+            <input type="text" id="guess" />
+            <button class="button button5" id="checkGuess">Guess!</button>
+        </p>
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById("checkGuess").onclick = function() {
+
+            var randomNumber = Math.random();
+
+            randomNumber = randomNumber * 6;
+
+            randomNumber = Math.floor(randomNumber);
+
+            if (document.getElementById("guess").value == randomNumber) {
+
+                alert("Well done! You got it!");
+            } else {
+                alert("Noope! The number was " + randomNumber);
+            }
+        }
+    </script>
+</body>
+
+</html>
